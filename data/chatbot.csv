@@ -1,6 +1,8 @@
 Moive Name,Rating,Votes,Meta Score,Genre,PG Rating,Year,Duration,Cast,Director
+
 HumanSays:,RobotSays:
 HumanSays:,RobotSays:
+
 What time is it?,getTIME
 What time do you have?,getTIME
 Got the time?,getTIME
@@ -33,8 +35,8 @@ Hi,Hello World!
 Greetings,Hello World!
 Hey,Hello World!
 What's up?,Hello World!
-Who are you?,I am a Ayaka.
-What is your name?,Ayaka.
+Who are you?,3E entertainment Chatbot.
+What is your name?, 3E entertainment Chatbot.
 
  Leave the World Behind,6.5,90000,67,"Drama, Mystery, Thriller",R,2023,2h 18m,"Julia Roberts, Mahershala Ali, Ethan Hawke, Myha'la",Sam Esmail
  Wonka,7.4,24000,66,"Adventure, Comedy, Family",PG,2023,1h 56m,"Timothée Chalamet, Gustave Die, Murray McArthur, Paul G. Raymond",Paul King
