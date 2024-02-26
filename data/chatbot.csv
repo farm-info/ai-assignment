@@ -34,45 +34,46 @@ Hey,Hello World!
 What's up?,Hello World!
 Who are you?,I am a Ayaka.
 What is your name?,Ayaka.
-Leave the World Behind,"6.5,90000.0,67,Drama, Mystery, Thriller,R,2023,2h 18m,Julia Roberts, Mahershala Ali, Ethan Hawke, Myha'la,Sam Esmail"
-Wonka,7.4,24000.0,66,"Adventure, Comedy, Family",PG,2023,1h 56m,"Timothée Chalamet, Gustave Die, Murray McArthur, Paul G. Raymond",Paul KingPoor Things,8.5,6700.0,86,"Comedy, Drama, Romance",R,2023,2h 21m,"Emma Stone, Mark Ruffalo, Willem Dafoe, Ramy Youssef",Yorgos Lanthimos
-Killers of the Flower Moon,7.8,128000.0,89,"Crime, Drama, History",R,2023,3h 26m,"Leonardo DiCaprio, Robert De Niro, Lily Gladstone, Jesse Plemons",Martin Scorsese
-May December,7.0,21000.0,85,"Comedy, Drama",R,2023,1h 57m,"Natalie Portman, Chris Tenzis, Charles Melton, Julianne Moore",Todd Haynes
-The Hunger Games: The Ballad of Songbirds & Snakes,7.1,56000.0,54,"Action, Adventure, Drama",PG-13,2023,2h 37m,"Rachel Zegler, Tom Blyth, Viola Davis, Dexter Sol Ansell",Francis Lawrence
-Napoleon,6.6,66000.0,64,"Action, Adventure, Biography",R,2023,2h 38m,"Joaquin Phoenix, Vanessa Kirby, Tahar Rahim, Rupert Everett",Ridley Scott
-Oppenheimer,8.4,553000.0,89,"Biography, Drama, History",R,2023,3h,"Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr.",Christopher Nolan
-Love Actually,7.6,517000.0,55,"Comedy, Drama, Romance",R,2003,2h 15m,"Hugh Grant, Martine McCutcheon, Liam Neeson, Laura Linney",Richard Curtis
-Candy Cane Lane,5.6,13000.0,47,"Comedy, Family, Fantasy",PG,2023,1h 57m,"Eddie Murphy, Tracee Ellis Ross, Jillian Bell, Genneya Walton",Reginald Hudlin
-Saltburn,7.5,13000.0,61,"Comedy, Drama, Thriller",R,2023,2h 11m,"Barry Keoghan, Jacob Elordi, Archie Madekwe, Sadie Soverall",Emerald Fennell
-Barbie,7.0,417000.0,80,"Adventure, Comedy, Fantasy",PG-13,2023,1h 54m,"Margot Robbie, Ryan Gosling, Issa Rae, Kate McKinnon",Greta Gerwig
-National Lampoon's Christmas Vacation,7.5,213000.0,49,Comedy,PG-13,1989,1h 37m,"Chevy Chase, Beverly D'Angelo, Juliette Lewis, Johnny Galecki",Jeremiah S. Chechik
-Rebel Moon - Part One: A Child of Fire,6.3,1900.0,32,"Action, Adventure, Drama",PG-13,2023,2h 13m,"Sofia Boutella, Charlie Hunnam, Ed Skrein, Jena Malone",Zack Snyder
-The Family Plan,6.3,9200.0,40,"Action, Comedy",PG-13,2023,1h 58m,"Mark Wahlberg, Michelle Monaghan, Ciarán Hinds, Zoe Margaret Colletti",Simon Cellan Jones
-The Holdovers,8.0,24000.0,82,"Comedy, Drama",R,2023,2h 13m,"Paul Giamatti, Da'Vine Joy Randolph, Dominic Sessa, Carrie Preston",Alexander Payne
-Family Switch,5.6,16000.0,37,"Comedy, Family",PG,2023,1h 46m,"Jennifer Garner, Ed Helms, Emma Myers, Brady Noon",McG
-Indiana Jones and the Dial of Destiny,6.6,159000.0,58,"Action, Adventure, Sci-Fi",PG-13,2023,2h 34m,"Harrison Ford, Phoebe Waller-Bridge, Antonio Banderas, Karen Allen",James Mangold
-Elf,7.1,300000.0,66,"Adventure, Comedy, Family",PG,2003,1h 37m,"Will Ferrell, James Caan, Bob Newhart, Zooey Deschanel",Jon Favreau
-How the Grinch Stole Christmas,6.3,280000.0,46,"Comedy, Family, Fantasy",PG,2000,1h 44m,"Jim Carrey, Taylor Momsen, Kelley, Jeffrey Tambor",Ron Howard
-Maestro,7.3,3600.0,78,"Biography, Drama, Music",R,2023,2h 9m,"Carey Mulligan, Bradley Cooper, Matt Bomer, Vincenzo Amato",Bradley Cooper
-Mr. Monk's Last Case: A Monk Movie, "7.0,3500.0,65,Comedy Crime Mystery,TV-PG,2023,1h 37m,Tony Shalhoub Traylor Howard Jason Gray-Stanford Melora Hardin,Randy Zisk"
-The Iron Claw, "NA,NA,72,Biography Drama Sport,R,2023,2h 10m,Zac Efron Jeremy Allen White Harris Dickinson Maura Tierney,Sean Durkin"
-Leo, "7.0,21000.0,65,Animation Comedy Family,PG,2023,1h 42m,Adam Sandler Bill Burr Cecily Strong Jason Alexander,Robert MarianettiRobert SmigelDavid Wachtenheim"
-Fast Charlie, "5.9,3700.0,70,Action Crime Drama,NA,2023,1h 30m,Pierce Brosnan Morena Baccarin James Caan Gbenga Akinnagbe,Phillip Noyce"
-The Creator, "6.9,92000.0,63,Action Adventure Drama,PG-13,2023,2h 13m,John David Washington Madeleine Yuna Voyles Gemma Chan Allison Janney,Gareth Edwards"
-The Grinch, "6.4,85000.0,51,Animation Comedy Family,PG,2018,1h 25m,Benedict Cumberbatch Cameron Seely Rashida Jones Pharrell Williams,Yarrow CheneyScott Mosier"
-Chicken Run: Dawn of the Nugget, "6.5,6300.0,63,Animation Adventure Comedy,PG,2023,1h 41m,Thandiwe Newton Zachary Levi Bella Ramsey Imelda Staunton,Sam Fell"
-Die Hard, "8.2,924000.0,72,Action Thriller,R,1988,2h 12m,Bruce Willis Alan Rickman Bonnie Bedelia Reginald VelJohnson,John McTiernan"
-The Killer, "6.8,140000.0,73,Action Adventure Crime,R,2023,1h 58m,Michael Fassbender Tilda Swinton Charles Parnell Arliss Howard,David Fincher"
-The Super Mario Bros. Movie, "7.0,213000.0,46,Animation Adventure Comedy,PG,2023,1h 32m,Chris Pratt Anya Taylor-Joy Charlie Day Jack Black,Aaron HorvathMichael JelenicPierre Leduc"
-Violent Night, "6.7,88000.0,55,Action Comedy Thriller,R,2022,1h 52m,David Harbour John Leguizamo Beverly D'Angelo Alex Hassell,Tommy Wirkola"
-Home Alone 2: Lost in New York, "6.9,389000.0,46,Adventure Comedy Crime,PG,1992,2h,Macaulay Culkin Joe Pesci Daniel Stern Catherine O'Hara,Chris Columbus"
-A Haunting in Venice, "6.5,84000.0,63,Crime Drama Horror,PG-13,2023,1h 43m,Kenneth Branagh Michelle Yeoh Jamie Dornan Tina Fey,Kenneth Branagh"
-The Marvels, "5.9,64000.0,50,Action Adventure Fantasy,PG-13,2023,1h 45m,Brie Larson Teyonah Parris Iman Vellani Samuel L. Jackson,Nia DaCosta"
-Wish, "5.8,11000.0,47,Animation Adventure Comedy,PG,2023,1h 35m,Ariana DeBose Chris Pine Alan Tudyk Angelique Cabral,Chris BuckFawn Veerasunthorn"
-The Polar Express, "6.6,233000.0,61,Animation Adventure Comedy,G,2004,1h 40m,Tom Hanks Chris Coppola Michael Jeter Leslie Zemeckis,Robert Zemeckis"
-It's a Wonderful Life, "8.6,486000.0,89,Drama Family Fantasy,PG,1946,2h 10m,James Stewart Donna Reed Lionel Barrymore Thomas Mitchell,Frank Capra"
-Five Nights at Freddy's, "5.5,78000.0,33,Horror Mystery Thriller,PG-13,2023,1h 49m,Josh Hutcherson Piper Rubio Elizabeth Lail Matthew Lillard,Emma Tammi"
-The Shift, "6.4,2400.0,NA,NA,PG-13,2023,1h 55m,NA,NA"
+0, Leave the World Behind,6.5,90000.0,67,"Drama, Mystery, Thriller",R,2023,2h 18m,"Julia Roberts, Mahershala Ali, Ethan Hawke, Myha'la",Sam Esmail
+1, Wonka,7.4,24000.0,66,"Adventure, Comedy, Family",PG,2023,1h 56m,"Timothée Chalamet, Gustave Die, Murray McArthur, Paul G. Raymond",Paul King
+2, Poor Things,8.5,6700.0,86,"Comedy, Drama, Romance",R,2023,2h 21m,"Emma Stone, Mark Ruffalo, Willem Dafoe, Ramy Youssef",Yorgos Lanthimos
+3, Killers of the Flower Moon,7.8,128000.0,89,"Crime, Drama, History",R,2023,3h 26m,"Leonardo DiCaprio, Robert De Niro, Lily Gladstone, Jesse Plemons",Martin Scorsese
+4, May December,7.0,21000.0,85,"Comedy, Drama",R,2023,1h 57m,"Natalie Portman, Chris Tenzis, Charles Melton, Julianne Moore",Todd Haynes
+5, The Hunger Games: The Ballad of Songbirds & Snakes,7.1,56000.0,54,"Action, Adventure, Drama",PG-13,2023,2h 37m,"Rachel Zegler, Tom Blyth, Viola Davis, Dexter Sol Ansell",Francis Lawrence
+6, Napoleon,6.6,66000.0,64,"Action, Adventure, Biography",R,2023,2h 38m,"Joaquin Phoenix, Vanessa Kirby, Tahar Rahim, Rupert Everett",Ridley Scott
+7, Oppenheimer,8.4,553000.0,89,"Biography, Drama, History",R,2023,3h,"Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr.",Christopher Nolan
+8, Love Actually,7.6,517000.0,55,"Comedy, Drama, Romance",R,2003,2h 15m,"Hugh Grant, Martine McCutcheon, Liam Neeson, Laura Linney",Richard Curtis
+9, Candy Cane Lane,5.6,13000.0,47,"Comedy, Family, Fantasy",PG,2023,1h 57m,"Eddie Murphy, Tracee Ellis Ross, Jillian Bell, Genneya Walton",Reginald Hudlin
+10, Saltburn,7.5,13000.0,61,"Comedy, Drama, Thriller",R,2023,2h 11m,"Barry Keoghan, Jacob Elordi, Archie Madekwe, Sadie Soverall",Emerald Fennell
+11, Barbie,7.0,417000.0,80,"Adventure, Comedy, Fantasy",PG-13,2023,1h 54m,"Margot Robbie, Ryan Gosling, Issa Rae, Kate McKinnon",Greta Gerwig
+12, National Lampoon's Christmas Vacation,7.5,213000.0,49,Comedy,PG-13,1989,1h 37m,"Chevy Chase, Beverly D'Angelo, Juliette Lewis, Johnny Galecki",Jeremiah S. Chechik
+13, Rebel Moon - Part One: A Child of Fire,6.3,1900.0,32,"Action, Adventure, Drama",PG-13,2023,2h 13m,"Sofia Boutella, Charlie Hunnam, Ed Skrein, Jena Malone",Zack Snyder
+14, The Family Plan,6.3,9200.0,40,"Action, Comedy",PG-13,2023,1h 58m,"Mark Wahlberg, Michelle Monaghan, Ciarán Hinds, Zoe Margaret Colletti",Simon Cellan Jones
+15, The Holdovers,8.0,24000.0,82,"Comedy, Drama",R,2023,2h 13m,"Paul Giamatti, Da'Vine Joy Randolph, Dominic Sessa, Carrie Preston",Alexander Payne
+16, Family Switch,5.6,16000.0,37,"Comedy, Family",PG,2023,1h 46m,"Jennifer Garner, Ed Helms, Emma Myers, Brady Noon",McG
+17, Indiana Jones and the Dial of Destiny,6.6,159000.0,58,"Action, Adventure, Sci-Fi",PG-13,2023,2h 34m,"Harrison Ford, Phoebe Waller-Bridge, Antonio Banderas, Karen Allen",James Mangold
+18, Elf,7.1,300000.0,66,"Adventure, Comedy, Family",PG,2003,1h 37m,"Will Ferrell, James Caan, Bob Newhart, Zooey Deschanel",Jon Favreau
+19, How the Grinch Stole Christmas,6.3,280000.0,46,"Comedy, Family, Fantasy",PG,2000,1h 44m,"Jim Carrey, Taylor Momsen, Kelley, Jeffrey Tambor",Ron Howard
+20, Maestro,7.3,3600.0,78,"Biography, Drama, Music",R,2023,2h 9m,"Carey Mulligan, Bradley Cooper, Matt Bomer, Vincenzo Amato",Bradley Cooper
+21, Mr. Monk's Last Case: A Monk Movie,7.0,3500.0,65,"Comedy, Crime, Mystery",TV-PG,2023,1h 37m,"Tony Shalhoub, Traylor Howard, Jason Gray-Stanford, Melora Hardin",Randy Zisk
+22, The Iron Claw,NA,NA,72,"Biography, Drama, Sport",R,2023,2h 10m,"Zac Efron, Jeremy Allen White, Harris Dickinson, Maura Tierney",Sean Durkin
+23, Leo,7.0,21000.0,65,"Animation, Comedy, Family",PG,2023,1h 42m,"Adam Sandler, Bill Burr, Cecily Strong, Jason Alexander",Robert MarianettiRobert SmigelDavid Wachtenheim
+24, Fast Charlie,5.9,3700.0,70,"Action, Crime, Drama",NA,2023,1h 30m,"Pierce Brosnan, Morena Baccarin, James Caan, Gbenga Akinnagbe",Phillip Noyce
+25, The Creator,6.9,92000.0,63,"Action, Adventure, Drama",PG-13,2023,2h 13m,"John David Washington, Madeleine Yuna Voyles, Gemma Chan, Allison Janney",Gareth Edwards
+26, The Grinch,6.4,85000.0,51,"Animation, Comedy, Family",PG,2018,1h 25m,"Benedict Cumberbatch, Cameron Seely, Rashida Jones, Pharrell Williams",Yarrow CheneyScott Mosier
+27, Chicken Run: Dawn of the Nugget,6.5,6300.0,63,"Animation, Adventure, Comedy",PG,2023,1h 41m,"Thandiwe Newton, Zachary Levi, Bella Ramsey, Imelda Staunton",Sam Fell
+28, Die Hard,8.2,924000.0,72,"Action, Thriller",R,1988,2h 12m,"Bruce Willis, Alan Rickman, Bonnie Bedelia, Reginald VelJohnson",John McTiernan
+29, The Killer,6.8,140000.0,73,"Action, Adventure, Crime",R,2023,1h 58m,"Michael Fassbender, Tilda Swinton, Charles Parnell, Arliss Howard",David Fincher
+30, The Super Mario Bros. Movie,7.0,213000.0,46,"Animation, Adventure, Comedy",PG,2023,1h 32m,"Chris Pratt, Anya Taylor-Joy, Charlie Day, Jack Black",Aaron HorvathMichael JelenicPierre Leduc
+31, Violent Night,6.7,88000.0,55,"Action, Comedy, Thriller",R,2022,1h 52m,"David Harbour, John Leguizamo, Beverly D'Angelo, Alex Hassell",Tommy Wirkola
+32, Home Alone 2: Lost in New York,6.9,389000.0,46,"Adventure, Comedy, Crime",PG,1992,2h,"Macaulay Culkin, Joe Pesci, Daniel Stern, Catherine O'Hara",Chris Columbus
+33, A Haunting in Venice,6.5,84000.0,63,"Crime, Drama, Horror",PG-13,2023,1h 43m,"Kenneth Branagh, Michelle Yeoh, Jamie Dornan, Tina Fey",Kenneth Branagh
+34, The Marvels,5.9,64000.0,50,"Action, Adventure, Fantasy",PG-13,2023,1h 45m,"Brie Larson, Teyonah Parris, Iman Vellani, Samuel L. Jackson",Nia DaCosta
+35, Wish,5.8,11000.0,47,"Animation, Adventure, Comedy",PG,2023,1h 35m,"Ariana DeBose, Chris Pine, Alan Tudyk, Angelique Cabral",Chris BuckFawn Veerasunthorn
+36, The Polar Express,6.6,233000.0,61,"Animation, Adventure, Comedy",G,2004,1h 40m,"Tom Hanks, Chris Coppola, Michael Jeter, Leslie Zemeckis",Robert Zemeckis
+37, It's a Wonderful Life,8.6,486000.0,89,"Drama, Family, Fantasy",PG,1946,2h 10m,"James Stewart, Donna Reed, Lionel Barrymore, Thomas Mitchell",Frank Capra
+38, Five Nights at Freddy's,5.5,78000.0,33,"Horror, Mystery, Thriller",PG-13,2023,1h 49m,"Josh Hutcherson, Piper Rubio, Elizabeth Lail, Matthew Lillard",Emma Tammi
+39, The Shift,6.4,2400.0,NA,NA,PG-13,2023,1h 55m,NA,NA
 40, The Santa Clause,6.6,130000.0,57,"Comedy, Drama, Family",PG,1994,1h 37m,"Tim Allen, Judge Reinhold, Wendy Crewson, Eric Lloyd",John Pasquin
 41, Christmas on Cherry Lane,6.2,689.0,NA,NA,TV-G,2023,1h 30m,NA,NA
 42, White Christmas,7.6,49000.0,56,"Comedy, Musical, Romance",NA,1954,2h,"Bing Crosby, Danny Kaye, Rosemary Clooney, Vera-Ellen",Michael Curtiz
