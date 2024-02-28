@@ -8,7 +8,6 @@ What day is it?,getDATE
 What is the date?,getDATE
 Do you know what time it is?,getTIME
 Do you have the time,getTIME
-I would like to search a movie,searchMOVIE
 Find me a movie about adventure,searchMOVIE
 I'm looking for a comedy movie,searchMOVIE
 Recommend a horror film,searchMOVIE
@@ -38,6 +37,7 @@ I need movie suggestions,recommendMOVIE
 Can you recommend a movie for me?,recommendMOVIE
 I'm in the mood for a movie,recommendMOVIE
 MOVIEmenu,MOVIEmenu
+I like it,addMOVIEtolist
 IDKnull,I don't know.
 IDKnull,I'll need to take some time to think on that.
 IDKnull,Can you try rephrasing that please?
@@ -64,6 +64,11 @@ Hey,Hello World!
 What's up?,Hello World!
 Who are you?,I am a Ayaka.
 What is your name?,Ayaka.
+bye,Goodbye!
+bye,See you later!
+bye,Sayonara!
+bye,Farewell!
+bye,Have a nice day!
 "hi, how are you doing?","i'm fine. how about yourself?"
 "i'm fine. how about yourself?","i'm pretty good. thanks for asking."
 "how's it going?","i'm doing well. how about you?"
