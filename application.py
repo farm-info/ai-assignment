@@ -39,7 +39,7 @@ def get_bot_response():
     userText = request.args.get('msg')
     botReply = str(getResponse(userText))
     if botReply == "IDKresponse":
-        botReply = str(getResponse('IDKnull')) ##Send the i don't know code back to the DB
+        botReply = str(getResponse('IDKnull')) ##Send the "i don't know" code back to the DB
         if useGoogle == "yes":
             botReply = botReply + tryGoogle(userText)
     elif botReply == "getTIME":
