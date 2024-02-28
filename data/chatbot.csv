@@ -8,6 +8,10 @@ What day is it?,getDATE
 What is the date?,getDATE
 Do you know what time it is?,getTIME
 Do you have the time,getTIME
+I would like to search a movie,searchMOVIE
+I would like to a random movie,randomMOVIE
+I would like some recommendations for a movie,recommendMOVIE
+1000,MOVIEmenu
 IDKnull,I don't know.
 IDKnull,I'll need to take some time to think on that.
 IDKnull,Can you try rephrasing that please?

@@ -9,6 +9,7 @@ from botRespond import getResponse
 
 #Bot functions
 from dateTime import getTime, getDate
+from recommendationEngine import *
 
 application = Flask(__name__)
 
@@ -47,6 +48,19 @@ def get_bot_response():
     elif botReply == "getDATE":
         botReply = getDate()
         print(getDate())
+    # Recommendation engine functions
+    elif botReply == "searchMOVIE":
+        botReply = search_movie()
+        print(search_movie())
+    elif botReply == "randomMOVIE":
+        botReply = random_movie()
+        print(random_movie())
+    elif botReply == "recommendMOVIE":
+        botReply = recommend_movie()
+        print(recommend_movie())
+    elif botReply == "MOVIEmenu":
+        botReply = movie_menu()
+        print(movie_menu())
     ##Log to CSV file
     print("Logging to CSV file now")
     with open('BotLog.csv', 'a', newline='') as logFile:
