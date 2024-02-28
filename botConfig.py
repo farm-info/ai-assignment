@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
 ##Change the following values to customize your ChatBot:
-myBotName = "Marvin the ChatBot"
+myBotName = "3E ChatBot"
 botTimeZone = "Asia/Kuala_Lumpur"  ##See the list full below
 botAvatar = "/static/Ayaka.png" ##This can either be an image in your static folder or a web url to an image
 chatBG = "/static/bg.jpg"  ##This can either be an image in your static folder or a web url to an image
