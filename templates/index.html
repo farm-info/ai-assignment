@@ -25,12 +25,12 @@
   <body background="{{chatBG}}" onload="getFirstResponse('Hello');">
     <div class="messagecontainer">
       <h1>{{botName}}</h1><hr>
-      <div id="chatbox">
-        <!--Nothing here in the beginning-->
-      </div>
-      <div id="typing">
-        <table class="botText" border="0" width="85%"><tr><td width="70" valign="top"><img class="avatar" src="{{botAvatar}}" align="left" style="margin: 3px;"></td><td valign="top"><img src="/static/typingnow.gif"></td></tr></table>
-      </div>
+        <div id="chatbox">
+          <!--Nothing here in the beginning-->
+          <div id="typing">
+            <table class="botText" border="0" width="85%"><tr><td width="70" valign="top"><img class="avatar" src="{{botAvatar}}" align="left" style="margin: 3px;"></td><td valign="top"><img src="/static/typingnow.gif"></td></tr></table>
+          </div>
+        </div>
       <div id="userInput">
         <input id="textInput" type="text" name="msg" placeholder="Message" autofocus>
         <input id="buttonInput" type="submit" value="Send">
@@ -40,16 +40,16 @@
       <script>
 		  var rawText;
 			function botTyping(){
-				document.getElementById('typing').style.visibility = "visible";
+				document.getElementById('typing').style.display = "block";
         setTimeout(getBotResponse, 750);
 			}
 
         function getFirstResponse(firstText) {
           $.get("/get", { msg: firstText }).done(function(data) {
             var botHtml = '<table class="botText" border="0" width="85%"><tr><td width="70" valign="top"><img class="avatar" src="{{botAvatar}}" align="left" style="margin: 3px;"></td><td valign="top">' + data + '</td></tr></table>';
-			document.getElementById('typing').style.visibility = "hidden";
+			document.getElementById('typing').style.display = "none";
             playAudio2();
-            $("#chatbox").append(botHtml);
+            $("#chatbox").prepend(botHtml);
             document.getElementById("buttonInput").disabled = false;
             document.getElementById("textInput").disabled = false;
             document.getElementById("textInput").focus();
@@ -59,9 +59,9 @@
         function getBotResponse() {
           $.get("/get", { msg: rawText }).done(function(data) {
             var botHtml = '<table class="botText" border="0" width="85%"><tr><td width="70" valign="top"><img class="avatar" src="{{botAvatar}}" align="left" style="margin: 3px;"></td><td valign="top">' + data + '</td></tr></table>';
-			document.getElementById('typing').style.visibility = "hidden";
+			document.getElementById('typing').style.display = "none";
             playAudio2();
-            $("#chatbox").append(botHtml);
+            $("#chatbox").prepend(botHtml);
             document.getElementById("buttonInput").disabled = false;
             document.getElementById("textInput").disabled = false;
             document.getElementById("textInput").focus();
@@ -72,14 +72,14 @@
         function chatSuggest(firstText) {
           var userHtml = '<p class="userText">' + firstText + '</p>';
           //$("#textInput").val("");
-          $("#chatbox").append(userHtml);
-          document.getElementById('typing').style.visibility = "visible";
+          $("#chatbox").prepend(userHtml);
+          document.getElementById('typing').style.display = "block";
 
           $.get("/get", { msg: firstText }).done(function(data) {
             var botHtml = '<table class="botText" border="0" width="85%"><tr><td width="70" valign="top"><img class="avatar" src="{{botAvatar}}" align="left" style="margin: 3px;"></td><td valign="top">' + data + '</td></tr></table>';
-			document.getElementById('typing').style.visibility = "hidden";
+			document.getElementById('typing').style.display = "none";
             playAudio2();
-            $("#chatbox").append(botHtml);
+            $("#chatbox").prepend(botHtml);
             document.getElementById("buttonInput").disabled = false;
             document.getElementById("textInput").disabled = false;
             document.getElementById("textInput").focus();
@@ -104,7 +104,7 @@
                   }
               		var userHtml = '<p class="userText">' + decodeURI(showText) + '</p>';
               		//$("#textInput").val("");
-              		$("#chatbox").append(userHtml);
+              		$("#chatbox").prepend(userHtml);
     				      setTimeout(botTyping, 750);
                 }
         });
@@ -125,7 +125,7 @@
               }
           		var userHtml = '<p class="userText">' + decodeURI(showText) + '</p>';
           		//$("#textInput").val("");
-          		$("#chatbox").append(userHtml);
+          		$("#chatbox").prepend(userHtml);
 				setTimeout(botTyping, 750);
         })
       </script>
