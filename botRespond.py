@@ -12,11 +12,8 @@ def getResponse(sendMsg: str) -> tuple[str, int|None]:
     #return "You said: " + sendMsg
     sendMsg = urllib.parse.unquote(sendMsg)
 
-    try:
+    if sendMsg.isdigit():
         movie_id = int(sendMsg)
-    except ValueError:
-        sendMsg = sendMsg
-    else:
         return "MOVIEmenu", movie_id
 
     #Loop through CSV knowledge file.  If a question is equal to or greater than the confidence level, add it to a list of possible responses. Then return a random responses
