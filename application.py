@@ -7,7 +7,7 @@ import urllib.parse
 from botConfig import myBotName, chatBG, botAvatar, useGoogle, confidenceLevel
 from botRespond import getResponse
 
-##Experimental Date Time
+#Bot functions
 from dateTime import getTime, getDate
 
 application = Flask(__name__)
