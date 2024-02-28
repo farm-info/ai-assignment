@@ -3,13 +3,22 @@ from difflib import SequenceMatcher
 import urllib.parse
 import csv
 import random
+from recommendationEngine import movie_menu
 
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
-def getResponse(sendMsg):
+def getResponse(sendMsg: str) -> tuple[str, int|None]:
     #return "You said: " + sendMsg
     sendMsg = urllib.parse.unquote(sendMsg)
+
+    try:
+        movie_id = int(sendMsg)
+    except ValueError:
+        sendMsg = sendMsg
+    else:
+        return "MOVIEmenu", movie_id
+
     #Loop through CSV knowledge file.  If a question is equal to or greater than the confidence level, add it to a list of possible responses. Then return a random responses
     lineCount = 0
     successCount = 0
@@ -44,4 +53,4 @@ def getResponse(sendMsg):
         botResponsePick = random.choice(comeBacks)
     else:
         botResponsePick = "IDKresponse"
-    return botResponsePick
+    return botResponsePick, None

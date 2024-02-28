@@ -37,7 +37,9 @@ def home():
 @application.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    botReply = str(getResponse(userText))
+    if userText is None:
+        userText = ""
+    botReply, movie_id = str(getResponse(userText))
     if botReply == "IDKresponse":
         botReply = str(getResponse('IDKnull')) ##Send the "i don't know" code back to the DB
         if useGoogle == "yes":
@@ -59,8 +61,9 @@ def get_bot_response():
         botReply = recommend_movie()
         print(recommend_movie())
     elif botReply == "MOVIEmenu":
-        botReply = movie_menu()
-        print(movie_menu())
+        # why the fuck is the type checking broken
+        botReply = movie_menu(movie_id) # type: ignore
+        print(movie_menu(movie_id)) # type: ignore
     ##Log to CSV file
     print("Logging to CSV file now")
     with open('BotLog.csv', 'a', newline='') as logFile:
