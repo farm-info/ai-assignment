@@ -44,9 +44,11 @@ def get_bot_response():
     if botReply == "IDKresponse":
         # send the "i don't know" code back to the bot
         # TODO stop doing this, which would require a new function and a new csv file
-        botReply = str(getResponse('IDKnull')[0])
+        botReply = str(getResponse(botReply)[0])
         if useGoogle == "yes":
             botReply = botReply + tryGoogle(userText)
+    elif botReply == "getGOODBYE":
+        botReply = str(getResponse(botReply)[0])
     elif botReply == "getTIME":
         botReply = getTime()
         print(getTime())
