@@ -49,6 +49,8 @@ def get_bot_response():
             botReply = botReply + tryGoogle(userText)
     elif botReply == "getGOODBYE":
         botReply = str(getResponse(botReply)[0])
+
+    # intent functions
     elif botReply == "getTIME":
         botReply = getTime()
         print(getTime())
