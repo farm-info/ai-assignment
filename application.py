@@ -40,6 +40,7 @@ def get_bot_response():
     if userText is None:
         userText = ""
     botReply, movie_id = getResponse(userText)
+
     if botReply == "IDKresponse":
         botReply = str(getResponse('IDKnull')[0]) ##Send the "i don't know" code back to the DB
         if useGoogle == "yes":
