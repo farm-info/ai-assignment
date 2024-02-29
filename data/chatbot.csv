@@ -1,5 +1,6 @@
 HumanSays:,RobotSays:
 HumanSays:,RobotSays:
+getWELCOMEMESSAGE,"Hello! I am Ayaka, your personal movie assistant. I can help you find movies to watch, recommend movies, and even add movies to your watchlist. How can I help you today?"
 What time is it?,getTIME
 What time do you have?,getTIME
 Got the time?,getTIME
