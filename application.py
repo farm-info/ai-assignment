@@ -39,15 +39,16 @@ def get_bot_response():
     if userText is None:
         userText = ""
     elif userText == "getWELCOMEMESSAGE":
-        botReply = str(getRandomResponses(userText)[0])
+        botReply = str(getRandomResponses(userText))
+
     botReply, movie_id = getResponse(userText)
 
     if botReply == "IDKresponse":
-        botReply = str(getRandomResponses(botReply)[0])
+        botReply = str(getRandomResponses(botReply))
         if useGoogle == "yes":
             botReply = botReply + tryGoogle(userText)
     elif botReply == "getGOODBYE":
-        botReply = str(getRandomResponses(botReply)[0])
+        botReply = str(getRandomResponses(botReply))
 
     # intent functions
     elif botReply == "getTIME":
