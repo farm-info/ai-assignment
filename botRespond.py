@@ -18,6 +18,16 @@ with open('data/chatbot.csv') as g:
     data = lines[2:] # list slicing to filter out headings
 
 
+with open('data/chatbot_randomized_responses.csv') as g:
+    lines = list(csv.reader(g))
+    lineCount = 0
+    for i in reversed(range(len(lines))):
+        if not (lines[i][0] and lines[i][1]):
+            print(f"WARNING: {lines[i]} skipped due to missing data")
+            del lines[i]
+    randomized_responses = lines[2:] # list slicing to filter out headings
+
+
 print("Analyzing chatbot dataset with spaCy...")
 data_humansays_only = [line[0] for line in data]
 data_doc = list(nlp.pipe(data_humansays_only))
@@ -60,3 +70,17 @@ def getResponse(sendMsg: str) -> tuple[str, int|None]:
     else:
         botResponsePick = "IDKresponse"
     return botResponsePick, None
+
+def getRandomResponses(sendMsg: str) -> str:
+    exactMatchCount = 0
+    exactReply = []
+    for line in randomized_responses:
+        if line[0] == sendMsg:
+            exactMatchCount += 1
+            print("Exact match found: " + line[0] + line[1])
+            exactReply.append(line[1])
+
+    if exactMatchCount == 0:
+        raise ValueError("No exact match found")
+
+    return random.choice(exactReply)
