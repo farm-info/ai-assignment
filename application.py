@@ -38,6 +38,8 @@ def get_bot_response():
     userText = urllib.parse.unquote(userText)
     if userText is None:
         userText = ""
+    elif userText == "getWELCOMEMESSAGE":
+        botReply = str(getRandomResponses(userText)[0])
     botReply, movie_id = getResponse(userText)
 
     if botReply == "IDKresponse":
