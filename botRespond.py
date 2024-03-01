@@ -3,10 +3,11 @@ from difflib import SequenceMatcher
 import urllib.parse
 import csv
 import random
-import spacy
+from spacy_loader import nlp
+
 
 # TODO where should i even put this code
-print("Loading dataset...")
+print("Loading chatbot dataset...")
 with open('data/chatbot.csv') as g:
     lines = list(csv.reader(g))
     lineCount = 0
@@ -16,18 +17,12 @@ with open('data/chatbot.csv') as g:
             del lines[i]
     data = lines[2:] # list slicing to filter out headings
 
-# if you don't have it, install spacy and run `python -m spacy download en_core_web_md`
-print("Loading spaCy model...")
-nlp = spacy.load("en_core_web_md")
 
-print("Loading dataset into spaCy...")
+print("Analyzing chatbot dataset with spaCy...")
 data_humansays_only = [line[0] for line in data]
 data_doc = list(nlp.pipe(data_humansays_only))
 
 def getResponse(sendMsg: str) -> tuple[str, int|None]:
-    #return "You said: " + sendMsg
-    sendMsg = urllib.parse.unquote(sendMsg)
-
     if sendMsg.isdigit():
         movie_id = int(sendMsg)
         return "MOVIEmenu", movie_id

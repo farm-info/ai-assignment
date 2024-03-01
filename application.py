@@ -36,7 +36,8 @@ def home():
 
 @application.route("/get")
 def get_bot_response():
-    userText = request.args.get('msg')
+    userText = request.args.get("msg", "")
+    userText = urllib.parse.unquote(userText)
     if userText is None:
         userText = ""
     botReply, movie_id = getResponse(userText)
@@ -53,24 +54,24 @@ def get_bot_response():
     # intent functions
     elif botReply == "getTIME":
         botReply = getTime()
-        print(getTime())
+        print(botReply)
     elif botReply == "getDATE":
         botReply = getDate()
-        print(getDate())
+        print(botReply)
     # Recommendation engine functions
     elif botReply == "searchMOVIE":
-        botReply = search_movie()
-        print(search_movie())
+        botReply = search_movie(userText)
+        print(userText)
     elif botReply == "randomMOVIE":
         botReply = random_movie()
-        print(random_movie())
+        print(botReply)
     elif botReply == "recommendMOVIE":
         botReply = recommend_movie()
-        print(recommend_movie())
+        print(botReply)
     elif botReply == "MOVIEmenu":
         # why the fuck is the type checking broken
         botReply = movie_menu(movie_id) # type: ignore
-        print(movie_menu(movie_id)) # type: ignore
+        print(botReply) # type: ignore
     ##Log to CSV file
     print("Logging to CSV file now")
     with open('BotLog.csv', 'a', newline='') as logFile:
