@@ -1,6 +1,5 @@
 import pandas as pd
 from sklearn.metrics.pairwise import linear_kernel
-import re
 from spacy_loader import nlp
 
 

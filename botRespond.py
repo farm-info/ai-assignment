@@ -1,6 +1,4 @@
 from botConfig import confidenceLevel
-from difflib import SequenceMatcher
-import urllib.parse
 import csv
 import random
 from spacy_loader import nlp
