@@ -11,7 +11,7 @@ nlp = spacy.load("en_core_web_md")
 
 
 print("Loading chatbot dataset...")
-with open('data/chatbot.csv') as g:
+with open("data/chatbot.csv", "r") as g:
     lines = list(csv.reader(g))
     lineCount = 0
     for i in reversed(range(len(lines))):
@@ -21,7 +21,7 @@ with open('data/chatbot.csv') as g:
     data = lines[2:] # list slicing to filter out headings
 
 
-with open('data/chatbot_randomized_responses.csv') as g:
+with open("data/chatbot_randomized_responses.csv", "r") as g:
     lines = list(csv.reader(g))
     lineCount = 0
     for i in reversed(range(len(lines))):
@@ -50,7 +50,7 @@ movies["combined_info"] = movies["title"] + movies["genres"] + movies["tags"]
 
 
 print("Analyzing movie dataset with spaCy...")
-movie_pipe = nlp.pipe(movies["combined_info"], disable=["parser", "tagger", "lemmatizer"], n_process=-1)
+movie_pipe = nlp.pipe(movies["combined_info"], disable=["parser", "tagger", "lemmatizer", "senter"], n_process=-1)
 # TODO test which components can be disabled
 movie_doc = list(movie_pipe)
 movie_vectors = pd.DataFrame([doc.vector for doc in movie_doc])

@@ -16,17 +16,12 @@ def get_recommendations_from_movie(id, num_recommend=10):
     return movies.iloc[movie_indices]
 
 
-def get_recommendations_from_query(user_query, num_recommend=10) -> tuple[pd.DataFrame, str]:
-    # analyze query to extact keywords
-    user_query_doc = nlp(user_query)
-    search_query = [token.lemma_ for token in user_query_doc if not token.is_stop and not token.is_punct and token.lemma_ not in USER_QUERY_STOP_WORDS]
-    search_query = " ".join(search_query).strip()
-
+def get_recommendations_from_query(search_query, num_recommend=10) -> tuple[pd.DataFrame, str]:
     if search_query == "":
         return pd.DataFrame(), search_query
 
     # TODO test which components can be disabled
-    query_vector = nlp(search_query).vector
+    query_vector = nlp(search_query, disable=["parser", "tagger", "lemmatizer"]).vector
     query_vector = pd.DataFrame(query_vector.reshape((1, -1)))
     similarity = linear_kernel(query_vector, movie_vectors)
 

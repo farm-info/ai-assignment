@@ -41,7 +41,7 @@ def get_bot_response():
     elif userText == "getWELCOMEMESSAGE":
         botReply = str(getRandomResponses(userText))
 
-    botReply, movie_id = getResponse(userText)
+    botReply, query = getResponse(userText)
 
     if botReply == "IDKresponse":
         botReply = str(getRandomResponses(botReply))
@@ -59,8 +59,8 @@ def get_bot_response():
         print(botReply)
     # Recommendation engine functions
     elif botReply == "searchMOVIE":
-        botReply = search_movie(userText)
-        print(userText)
+        botReply = search_movie(str(query))
+        print(query)
     elif botReply == "randomMOVIE":
         botReply = random_movie()
         print(botReply)
@@ -69,7 +69,7 @@ def get_bot_response():
         print(botReply)
     elif botReply == "MOVIEmenu":
         # why the fuck is the type checking broken
-        botReply = movie_menu(movie_id) # type: ignore
+        botReply = movie_menu(query) # type: ignore
         print(botReply) # type: ignore
     ##Log to CSV file
     print("Logging to CSV file now")

@@ -1,22 +1,25 @@
-from botConfig import confidenceLevel
+from botConfig import confidenceLevel, SEARCH_WORDS, USER_QUERY_STOP_WORDS
 import random
 from data_loader import nlp, data, data_doc, randomized_responses
 
 
-def getResponse(sendMsg: str) -> tuple[str, int|None]:
+def getResponse(sendMsg: str) -> tuple[str, str|int|None]:
     if sendMsg.isdigit():
         movie_id = int(sendMsg)
         return "MOVIEmenu", movie_id
 
-    # TODO check for any direct commands
-    # TODO keywords
+    sendMsg_doc = nlp(sendMsg)
+
+    # directly check for search words
+    for token in sendMsg_doc:
+        if token.lemma_ in SEARCH_WORDS:
+            return "searchMOVIE", sendMsg
 
     successCount = 0
     exactCount = 0
     comeBacks = []
     exactReply = []
     exactMatch = .9
-    sendMsg_doc = nlp(sendMsg)
 
     print("Checking for matches...")
     for i, line_doc in enumerate(data_doc):
@@ -40,6 +43,13 @@ def getResponse(sendMsg: str) -> tuple[str, int|None]:
         botResponsePick = random.choice(comeBacks)
     else:
         botResponsePick = "IDKresponse"
+
+    if botResponsePick == "searchMOVIE":
+        # analyze query to extact keywords
+        search_query = [token.lemma_ for token in sendMsg_doc if not token.is_stop and not token.is_punct and token.lemma_ not in USER_QUERY_STOP_WORDS]
+        search_query = " ".join(search_query).strip()
+        return botResponsePick, search_query
+
     return botResponsePick, None
 
 def getRandomResponses(sendMsg: str) -> str:
