@@ -78,4 +78,6 @@ def get_bot_response():
 
 
 if __name__ == "__main__":
+    # load data before the site starts
+    import data_loader
     application.run()

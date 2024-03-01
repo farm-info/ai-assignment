@@ -1,47 +1,7 @@
 import pandas as pd
 from sklearn.metrics.pairwise import linear_kernel
-from spacy_loader import nlp
-
-
-DATASET_PATH = "data/ml-latest-small/"
-USER_QUERY_STOP_WORDS = {
-    "movie",
-    "recommend",
-    "look",
-    "find",
-    "want",
-    "good",
-    "like",
-    "watch",
-    "see",
-    "search",
-}
-
-# TODO where should i even put this code
-# initialize
-print("Loading movie dataset...")
-movies = pd.read_csv(DATASET_PATH + "movies.csv", index_col="movieId")
-df_tags = pd.read_csv(DATASET_PATH + "tags.csv")
-movies["tags"] = (
-    df_tags.groupby("movieId")["tag"]
-    .apply(lambda x: " ".join(x))
-    .reset_index()["tag"]
-    .fillna("")
-)  # join with the tags table
-movies["tags"] = movies["tags"].fillna("")  # Replace null data with empty string
-movies["combined_info"] = movies["title"] + movies["genres"] + movies["tags"]
-
-
-# analyze
-print("Analyzing movie dataset with spaCy...")
-movie_pipe = nlp.pipe(movies["combined_info"], disable=["parser", "tagger", "lemmatizer"], n_process=-1)
-# TODO test which components can be disabled
-movie_doc = list(movie_pipe)
-movie_vectors = pd.DataFrame([doc.vector for doc in movie_doc])
-similarity = linear_kernel(movie_vectors, movie_vectors)
-
-
-# TODO dump processed data and reuse
+from data_loader import nlp, movies, similarity, movie_vectors
+from botConfig import USER_QUERY_STOP_WORDS
 
 
 # recommendation functions
@@ -106,7 +66,7 @@ def recommend_movie() -> str:
     return response
 
 def movie_menu(movie_id: int) -> str:
-    recommendations = get_recommendations_from_movie(movie_doc)
+    recommendations = get_recommendations_from_movie(movie_id)
     response = f"Here are some recommendations based on the movie {str(movie_id)}: <br>"
     response += recommendations.to_html()
     return response

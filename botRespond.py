@@ -1,34 +1,7 @@
 from botConfig import confidenceLevel
-import csv
 import random
-from spacy_loader import nlp
+from data_loader import nlp, data, data_doc, randomized_responses
 
-
-# TODO where should i even put this code
-print("Loading chatbot dataset...")
-with open('data/chatbot.csv') as g:
-    lines = list(csv.reader(g))
-    lineCount = 0
-    for i in reversed(range(len(lines))):
-        if not (lines[i][0] and lines[i][1]):
-            print(f"WARNING: {lines[i]} skipped due to missing data")
-            del lines[i]
-    data = lines[2:] # list slicing to filter out headings
-
-
-with open('data/chatbot_randomized_responses.csv') as g:
-    lines = list(csv.reader(g))
-    lineCount = 0
-    for i in reversed(range(len(lines))):
-        if not (lines[i][0] and lines[i][1]):
-            print(f"WARNING: {lines[i]} skipped due to missing data")
-            del lines[i]
-    randomized_responses = lines[2:] # list slicing to filter out headings
-
-
-print("Analyzing chatbot dataset with spaCy...")
-data_humansays_only = [line[0] for line in data]
-data_doc = list(nlp.pipe(data_humansays_only))
 
 def getResponse(sendMsg: str) -> tuple[str, int|None]:
     if sendMsg.isdigit():
