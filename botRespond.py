@@ -48,7 +48,7 @@ def getRandomResponses(sendMsg: str) -> str:
     for line in randomized_responses:
         if line[0] == sendMsg:
             exactMatchCount += 1
-            print("Exact match found: " + line[0] + line[1])
+            print(f"Exact match found: {line[0]} {line[1]}")
             exactReply.append(line[1])
 
     if exactMatchCount == 0:
