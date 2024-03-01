@@ -39,6 +39,7 @@ Any action movies?,searchMOVIE
 I want to watch something,searchMOVIE
 Find a romantic movie,searchMOVIE
 Any good dramas?,searchMOVIE
+random,randomMOVIE
 I would like to a random movie,randomMOVIE
 Give me a random movie,randomMOVIE
 Choose a movie for me,randomMOVIE
@@ -110,11 +111,6 @@ What is your name?,Ayaka.
 "I have to say, my favorite movie is Superbad.","Is that right? Why?"
 "Honestly, it is one of the funniest movies I've seen in a long time.","You're right. That movie is hilarious."
 "I didn't think you saw that movie.","I went to see it the day it came out."
-"I went to see it the day it came out.","I was laughing through the whole movie."
-"I was laughing through the whole movie.","I couldn't help laughing, either."
-"I bought the movie. Would you like to come to my house and watch it?","Of course."
-"Out of every movie that you've seen, which one is your favorite?","I'm going to have to say that Superbad is the best movie ever."
-"You think so, how come?","Well, Superbad is super funny."
 "You're not lying, I found that movie absolutely hilarious.","I made sure to be in line to see it the first day it came out."
 "I couldn't keep from laughing throughout the whole movie.","I was laughing hysterically the whole time; my stomach muscles hurt afterwards."
 "That's exactly how I felt.","I got the movie when it came out on DVD, do you want to come over?"
