@@ -1,8 +1,6 @@
 #! /usr/bin/python3
 from flask import Flask, render_template, request
-import random
 import csv
-import os
 import urllib.parse
 from botConfig import myBotName, chatBG, botAvatar, useGoogle, confidenceLevel
 from botRespond import getResponse, getRandomResponses
