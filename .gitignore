@@ -164,3 +164,4 @@ settings.json
 
 # bot specific stuff
 BotLog.csv
+movie_history.csv

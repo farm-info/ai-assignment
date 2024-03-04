@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.metrics.pairwise import linear_kernel
-from data_loader import nlp, movies, similarity, movie_vectors
+from data_loader import nlp, movies, similarity, movie_vectors, movie_history
 from botConfig import USER_QUERY_STOP_WORDS
 
 
@@ -42,26 +42,38 @@ def random_movie() -> str:
     response += recommendations.to_html()
     return response
 
+
 def search_movie(user_query: str) -> str:
     recommendations, search_query = get_recommendations_from_query(user_query)
     if search_query == "":
         response = "I couldn't find any keywords based on your input."
+        response += recommend_movie()
     elif recommendations.empty:
-        response = f"I couldn't find any recommendations based on '{search_query}'"
+        response = f"I couldn't find any keywords based on '{search_query}'"
     else:
         response = f"Here are recommendations based on keywords '{search_query}': <br>"
         response += recommendations.to_html()
     return response
 
+
 # TODO
 def recommend_movie() -> str:
-    recommendations = movies.sample(5)
-    response = "Here are some random movies: <br>"
+    movie_history_filtered = movie_history[movie_history['userID'] == 0]
+    choosen_movies = movie_history_filtered.sample(5)
+    for movie_id in choosen_movies['movieID']:
+        recommendations += get_recommendations_from_movie(movie_id, num_recommend=2)
+    response = "Here are some movies that I think you'll like: <br>"
     response += recommendations.to_html()
     return response
 
+
 def movie_menu(movie_id: int) -> str:
-    recommendations = get_recommendations_from_movie(movie_id)
-    response = f"Here are some recommendations based on the movie {str(movie_id)}: <br>"
-    response += recommendations.to_html()
+    try:
+        recommendations = get_recommendations_from_movie(movie_id)
+    except ValueError:
+        response = f"I couldn't find any movie with the ID {str(movie_id)}."
+    else:
+        movie_history.loc[-1] = [0, movie_id]
+        response = f"Here are some recommendations based on the movie {str(movie_id)}: <br>"
+        response += recommendations.to_html()
     return response

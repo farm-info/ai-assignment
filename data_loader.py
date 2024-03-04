@@ -58,3 +58,11 @@ similarity = linear_kernel(movie_vectors, movie_vectors)
 
 
 # TODO dump processed data and reuse
+
+
+try:
+    file = open('movie_history.csv', 'r')
+except IOError:
+    file = open('movie_history.csv', 'w')
+
+movie_history = pd.read_csv('movie_history.csv', index_col=0)
