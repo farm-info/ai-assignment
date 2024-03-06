@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.metrics.pairwise import linear_kernel
 from data_loader import nlp, movies, similarity, movie_vectors, movie_history, save_to_movie_history
 from botConfig import USER_QUERY_STOP_WORDS
+import random
 
 
 # recommendation functions
@@ -16,22 +17,25 @@ def get_recommendations_from_movie(id, num_recommend=10):
     return movies.iloc[movie_indices]
 
 
-def get_recommendations_from_query(search_query, num_recommend=10) -> tuple[pd.DataFrame, str]:
+def get_recommendations_from_query(user_query, num_recommend=10) -> tuple[pd.DataFrame, str]:
+    # TODO test which components can be disabled
+    nlp.Defaults.stop_words |= set(USER_QUERY_STOP_WORDS)
+    query_doc = nlp(user_query, disable=["parser", "tagger", "lemmatizer"])
+    nlp.Defaults.stop_words -= set(USER_QUERY_STOP_WORDS)
+    query_vector = pd.DataFrame(query_doc.vector.reshape((1, -1)))
+
+    search_query = " ".join([token.text for token in query_doc if not token.is_stop])
     if search_query == "":
         return pd.DataFrame(), search_query
 
-    # TODO test which components can be disabled
-    query_vector = nlp(search_query, disable=["parser", "tagger", "lemmatizer"]).vector
-    query_vector = pd.DataFrame(query_vector.reshape((1, -1)))
     similarity = linear_kernel(query_vector, movie_vectors)
-
     if similarity[0].sum() == 0:
         return pd.DataFrame(), search_query
-
     sim_scores = list(enumerate(similarity[0]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     top_similar = sim_scores[1 : num_recommend + 1]
     indices = [i[0] for i in top_similar]
+
     return movies.iloc[indices], search_query
 
 
@@ -50,6 +54,7 @@ def search_movie(user_query: str) -> str:
         response += recommend_movie()
     elif recommendations.empty:
         response = f"I couldn't find any keywords based on '{search_query}'"
+        response += recommend_movie()
     else:
         response = f"Here are recommendations based on keywords '{search_query}': <br>"
         response += recommendations.to_html()
