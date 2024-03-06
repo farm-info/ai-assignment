@@ -40,8 +40,8 @@ def get_bot_response():
         userText = ""
     elif userText == "getWELCOMEMESSAGE":
         botReply = str(getRandomResponses(userText))
-
-    botReply, query = getResponse(userText)
+    else:
+        botReply, query = getResponse(userText)
 
     if botReply == "IDKresponse":
         botReply = str(getRandomResponses(botReply))
