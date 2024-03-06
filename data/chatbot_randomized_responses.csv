@@ -1,6 +1,6 @@
 HumanSays:,RobotSays:
 HumanSays:,RobotSays:
-getWELCOMEMESSAGE,"Hello! I am Ayaka, your personal movie assistant. I can help you find movies to watch, recommend movies, and even add movies to your watchlist. How can I help you today?"
+getWELCOMEMESSAGE,"Hello! I am Ayaka, your personal movie assistant. <br>Try asking a question and I'll search based on the keywords.<br> Type a movie ID for recommendations based on a that movie, and save it to your history.<br> If I can't find a keywords, I'll recommend based on your history.<br> So how can I help you today?"
 IDKresponse,I don't know.
 IDKresponse,I'll need to take some time to think on that.
 IDKresponse,Can you try rephrasing that please?
