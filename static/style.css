@@ -23,7 +23,7 @@ h3 {
 
 .messagecontainer{
 	width: 100%;
-	max-width: 750px;
+	max-width: 1000px;
     margin: 10px auto;
 
     flex-grow: 1;
@@ -57,10 +57,8 @@ h3 {
 
 #userInput {
     background-color: #fff;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
     /*width: 40%;*/
-    margin-top: 10px;
     border: 2px solid white;
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -68,7 +66,7 @@ h3 {
 }
 
 #textInput {
-    width: 90%;
+    flex-grow: 1;
     border: none;
     border-bottom: 3px solid #009688;
     font-family: monospace;
