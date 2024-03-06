@@ -56,11 +56,12 @@ def search_movie(user_query: str) -> str:
     return response
 
 
-# TODO
+# TODO more testing
 def recommend_movie() -> str:
-    movie_history_filtered = movie_history[movie_history['userID'] == 0]
-    choosen_movies = movie_history_filtered.sample(5)
-    for movie_id in choosen_movies['movieID']:
+    user_movie_history = [movie for movie in movie_history if movie[0] == 0]
+    random_movies = random.sample(user_movie_history.index.tolist(), 5)
+    for movie in random_movies:
+        movie_id = movie[1]
         recommendations += get_recommendations_from_movie(movie_id, num_recommend=2)
     response = "Here are some movies that I think you'll like: <br>"
     response += recommendations.to_html()
