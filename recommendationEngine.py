@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.metrics.pairwise import linear_kernel
-from data_loader import nlp, movies, similarity, movie_vectors, movie_history
+from data_loader import nlp, movies, similarity, movie_vectors, movie_history, save_to_movie_history
 from botConfig import USER_QUERY_STOP_WORDS
 
 
@@ -73,7 +73,7 @@ def movie_menu(movie_id: int) -> str:
     except ValueError:
         response = f"I couldn't find any movie with the ID {str(movie_id)}."
     else:
-        movie_history.loc[-1] = [0, movie_id]
+        save_to_movie_history(movie_id)
         response = f"Here are some recommendations based on the movie {str(movie_id)}: <br>"
         response += recommendations.to_html()
     return response

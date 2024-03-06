@@ -65,4 +65,11 @@ try:
 except IOError:
     file = open('movie_history.csv', 'w')
 
-movie_history = pd.read_csv('movie_history.csv', index_col=0)
+with open('movie_history.csv', 'r') as f:
+    movie_history = list(csv.reader(f))
+
+
+def save_to_movie_history(movie_id: int):
+    with open('movie_history.csv', 'a', newline='') as f:
+        newFileWriter = csv.writer(f)
+        newFileWriter.writerow([movie_id])
