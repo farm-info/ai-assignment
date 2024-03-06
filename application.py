@@ -69,8 +69,8 @@ def get_bot_response():
         print(botReply)
     elif botReply == "MOVIEmenu":
         # why the fuck is the type checking broken
-        botReply = movie_menu(query) # type: ignore
-        print(botReply) # type: ignore
+        botReply = movie_menu(query)  # type: ignore
+        print(botReply)
     ##Log to CSV file
     print("Logging to CSV file now")
     with open('BotLog.csv', 'a', newline='') as logFile:

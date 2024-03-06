@@ -165,3 +165,6 @@ settings.json
 # bot specific stuff
 BotLog.csv
 movie_history.csv
+data/data_doc.joblib
+data/movie_similarity.joblib
+data/movie_vectors.joblib

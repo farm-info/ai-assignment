@@ -1,8 +1,12 @@
 import csv
 import pandas as pd
+
 import spacy
 from sklearn.metrics.pairwise import linear_kernel
 from botConfig import DATASET_PATH
+
+import os
+import joblib
 
 
 # if you don't have it, install spacy and run `python -m spacy download en_core_web_md`
@@ -31,9 +35,14 @@ with open("data/chatbot_randomized_responses.csv", "r") as g:
     randomized_responses = lines[2:] # list slicing to filter out headings
 
 
-print("Analyzing chatbot dataset with spaCy...")
-data_humansays_only = [line[0] for line in data]
-data_doc = list(nlp.pipe(data_humansays_only))
+if os.path.exists("data/data_doc.joblib"):
+    print("Loading preprocessed data...")
+    data_doc = joblib.load("data/data_doc.joblib")
+else:
+    print("Analyzing chatbot dataset with spaCy...")
+    data_humansays_only = [line[0] for line in data]
+    data_doc = list(nlp.pipe(data_humansays_only))
+    joblib.dump(data_doc, "data/data_doc.joblib")
 
 
 print("Loading movie dataset...")
@@ -46,18 +55,22 @@ movies["tags"] = (
     .fillna("")
 )  # join with the tags table
 movies["tags"] = movies["tags"].fillna("")  # Replace null data with empty string
-movies["combined_info"] = movies["title"] + movies["genres"] + movies["tags"]
 
 
-print("Analyzing movie dataset with spaCy...")
-movie_pipe = nlp.pipe(movies["combined_info"], disable=["parser", "tagger", "lemmatizer", "senter"])
-# TODO test which components can be disabled
-movie_doc = list(movie_pipe)
-movie_vectors = pd.DataFrame([doc.vector for doc in movie_doc])
-similarity = linear_kernel(movie_vectors, movie_vectors)
-
-
-# TODO dump processed data and reuse
+if os.path.exists("data/movie_similarity.joblib") and os.path.exists("data/movie_vectors.joblib"):
+    print("Loading preprocessed data...")
+    similarity = joblib.load("data/movie_similarity.joblib")
+    movie_vectors = joblib.load("data/movie_vectors.joblib")
+else:
+    print("Analyzing movie dataset with spaCy...")
+    movies["combined_info"] = movies["title"] + movies["genres"] + movies["tags"]
+    # TODO test which components can be disabled
+    movie_pipe = nlp.pipe(movies["combined_info"], disable=["parser", "tagger", "lemmatizer", "senter"], n_process=-1)
+    movie_doc = list(movie_pipe)
+    movie_vectors = pd.DataFrame([doc.vector for doc in movie_doc])
+    similarity = linear_kernel(movie_vectors, movie_vectors)
+    joblib.dump(similarity, "data/movie_similarity.joblib")
+    joblib.dump(movie_vectors, "data/movie_vectors.joblib")
 
 
 try:
@@ -65,4 +78,11 @@ try:
 except IOError:
     file = open('movie_history.csv', 'w')
 
-movie_history = pd.read_csv('movie_history.csv', index_col=0)
+with open('movie_history.csv', 'r') as f:
+    movie_history = list(csv.reader(f))
+
+
+def save_to_movie_history(movie_id: int):
+    with open('movie_history.csv', 'a', newline='') as f:
+        newFileWriter = csv.writer(f)
+        newFileWriter.writerow([movie_id])
