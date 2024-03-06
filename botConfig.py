@@ -9,6 +9,7 @@ useGoogle = "yes" ## yes or no if you want Google links provided when your Bot d
 confidenceLevel = 0.50 ##Bot confidence level - must be betwee. 0.00 and 1, default is 0.65
 DATASET_PATH = "data/ml-latest-small/"
 SEARCH_WORDS = {
+    "recommendation",
     "recommend",
     "find",
     "like",
@@ -21,6 +22,13 @@ USER_QUERY_STOP_WORDS = SEARCH_WORDS |{
     "see",
     "want",
     "movie",
+    "movies",
+    "film",
+    "films",
+    "show",
+    "shows",
+    "tv",
+    "series",
 }
 
 
