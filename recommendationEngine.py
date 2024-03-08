@@ -6,7 +6,7 @@ import random
 
 
 # recommendation functions
-def get_recommendations_from_movie(id, num_recommend=10):
+def get_recommendations_from_movie(id: int, num_recommend: int = 10) -> pd.DataFrame:
     if id not in movies.index:
         raise ValueError("Invalid uid")
     idx = movies.index.get_loc(id)
@@ -17,7 +17,7 @@ def get_recommendations_from_movie(id, num_recommend=10):
     return movies.iloc[indices]
 
 
-def get_recommendations_from_query(user_query, num_recommend=10) -> tuple[pd.DataFrame, str]:
+def get_recommendations_from_query(user_query, num_recommend: int = 10) -> tuple[pd.DataFrame, str]:
     # TODO test which components can be disabled
     for word in USER_QUERY_STOP_WORDS:
         nlp.vocab[word].is_stop = True
@@ -52,7 +52,7 @@ def random_movie() -> str:
 def search_movie(user_query: str) -> str:
     recommendations, search_query = get_recommendations_from_query(user_query)
     if search_query == "":
-        response = "I couldn't find any keywords based on your input."
+        response = "I couldn't find any keywords based on your input.<br>"
         response += recommend_movie()
     elif recommendations.empty:
         response = f"I couldn't find any keywords based on '{search_query}'"
@@ -65,14 +65,22 @@ def search_movie(user_query: str) -> str:
 
 # TODO more testing
 def recommend_movie() -> str:
-    user_movie_history = [movie for movie in movie_history if movie[0] == 0]
+    user_movie_history = [movie[1] for movie in movie_history if movie[0] == "0"]
+    if len(user_movie_history) == 0:
+        response = "Your movie history is empty.<br>"
+        response += random_movie()
+        return response
+
     if len(user_movie_history) < 5:
         chosen_movies = user_movie_history
     else:
         chosen_movies = random.sample(user_movie_history, 5)
+
+    lists_of_recommendations = []
     for movie in chosen_movies:
         movie_id = movie[1]
-        recommendations += get_recommendations_from_movie(movie_id, num_recommend=2)
+        lists_of_recommendations.append(get_recommendations_from_movie(int(movie_id), num_recommend=3))
+    recommendations = pd.concat([recommendation_df for recommendation_df in lists_of_recommendations])
     response = "Here are some movies that I think you'll like: <br>"
     response += recommendations.to_html()
     return response
