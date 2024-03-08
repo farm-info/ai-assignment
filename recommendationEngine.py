@@ -13,20 +13,23 @@ def get_recommendations_from_movie(id, num_recommend=10):
     sim_scores = list(enumerate(similarity[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     top_similar = sim_scores[1 : num_recommend + 1]
-    movie_indices = [i[0] for i in top_similar]
-    return movies.iloc[movie_indices]
+    indices = [i[0] for i in top_similar]
+    return movies.iloc[indices]
 
 
 def get_recommendations_from_query(user_query, num_recommend=10) -> tuple[pd.DataFrame, str]:
     # TODO test which components can be disabled
-    nlp.Defaults.stop_words |= set(USER_QUERY_STOP_WORDS)
-    query_doc = nlp(user_query, disable=["parser", "tagger", "lemmatizer"])
-    nlp.Defaults.stop_words -= set(USER_QUERY_STOP_WORDS)
+    for word in USER_QUERY_STOP_WORDS:
+        nlp.vocab[word].is_stop = True
+    query_doc = nlp(user_query, disable=[])
     query_vector = pd.DataFrame(query_doc.vector.reshape((1, -1)))
 
     search_query = " ".join([token.text for token in query_doc if not token.is_stop])
     if search_query == "":
         return pd.DataFrame(), search_query
+
+    for word in USER_QUERY_STOP_WORDS:
+        nlp.vocab[word].is_stop = False
 
     similarity = linear_kernel(query_vector, movie_vectors)
     if similarity[0].sum() == 0:
@@ -35,7 +38,6 @@ def get_recommendations_from_query(user_query, num_recommend=10) -> tuple[pd.Dat
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     top_similar = sim_scores[1 : num_recommend + 1]
     indices = [i[0] for i in top_similar]
-
     return movies.iloc[indices], search_query
 
 
@@ -64,8 +66,11 @@ def search_movie(user_query: str) -> str:
 # TODO more testing
 def recommend_movie() -> str:
     user_movie_history = [movie for movie in movie_history if movie[0] == 0]
-    random_movies = random.sample(user_movie_history.index.tolist(), 5)
-    for movie in random_movies:
+    if len(user_movie_history) < 5:
+        chosen_movies = user_movie_history
+    else:
+        chosen_movies = random.sample(user_movie_history, 5)
+    for movie in chosen_movies:
         movie_id = movie[1]
         recommendations += get_recommendations_from_movie(movie_id, num_recommend=2)
     response = "Here are some movies that I think you'll like: <br>"
