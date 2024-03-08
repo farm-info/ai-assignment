@@ -45,6 +45,8 @@ def get_bot_response():
 
     if botReply == "getGOODBYE":
         botReply = str(getRandomResponses(botReply))
+    elif botReply == "getAYAKA":
+        botReply = open("ayaka.txt", "r").read()
     # elif botReply == "IDKresponse":
     #     botReply = str(getRandomResponses(botReply))
     #     if useGoogle == "yes":

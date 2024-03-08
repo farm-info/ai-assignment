@@ -59,7 +59,24 @@ Hey,Hello World!
 What's up?,Hello World!
 Who are you?,I am a Ayaka.
 What is your name?,Ayaka.
+Kamisato Ayaka,getAYAKA
+kamisato ayaka,getAYAKA
+ayaka,getAYAKA
+ayato,getAYAKA
+i love you,getAYAKA
+can you be my waifu,getAYAKA
 "hi, how are you doing?","i'm fine. how about yourself?"
+human input,bot output
+"good morning","good morning. how are you today?"
+"good night","good night. sweet dreams."
+"thank you","you're welcome."
+"you're welcome","no problem at all."
+"hello","hi there. how can I assist you?"
+"how are you?","I'm doing well, thanks. How about yourself?"
+"nice to meet you","likewise. How can I help you today?"
+"how's your day going?","it's going well, thank you for asking. How about yours?"
+"take care","you too. Stay safe."
+"i'm fine","good to hear."
 "i'm fine. how about yourself?","i'm pretty good. thanks for asking."
 "how's it going?","i'm doing well. how about you?"
 "i'm doing well. how about you?","never better, thanks."
@@ -67,10 +84,8 @@ What is your name?,Ayaka.
 "i'm doing great. what about you?","i'm absolutely lovely, thank you."
 "it's such a nice day.","yes, it is."
 "it looks like it may rain soon.","yes, and i hope that it does."
-"yes, and i hope that it does.","why is that?"
 "isn't it a nice day?","yes, i think so too."
-"hopefully it will.","how come?"
-"my bad, i had chores to do.","that's all right."
+"my bad","that's all right."
 "that's all right.","i'm glad you understand."
 "I have it on DVD at my house if you want to come over and watch it.","Sure, let's go."
 "I have to say, my favorite movie is Superbad.","Is that right? Why?"
@@ -79,7 +94,4 @@ What is your name?,Ayaka.
 "it's no problem. i was really missing you anyway.","i missed you too."
 "why haven't you tried to come see me then?","i've been really busy."
 "i've been working too.","well regardless, i'm very happy that you came to see me."
-"i'm really glad that you came to visit me.","i had to. i was missing you a lot."
-"i had no idea.","you didn't?"
-"next saturday, i'm throwing a party.","is that right?"
 "i hate to go outside.","me too."
