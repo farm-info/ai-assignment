@@ -43,12 +43,12 @@ def get_bot_response():
     else:
         botReply, query = getResponse(userText)
 
-    if botReply == "IDKresponse":
+    if botReply == "getGOODBYE":
         botReply = str(getRandomResponses(botReply))
-        if useGoogle == "yes":
-            botReply = botReply + tryGoogle(userText)
-    elif botReply == "getGOODBYE":
-        botReply = str(getRandomResponses(botReply))
+    # elif botReply == "IDKresponse":
+    #     botReply = str(getRandomResponses(botReply))
+    #     if useGoogle == "yes":
+    #         botReply = botReply + tryGoogle(userText)
 
     # intent functions
     elif botReply == "getTIME":
@@ -58,7 +58,7 @@ def get_bot_response():
         botReply = getDate()
         print(botReply)
     # Recommendation engine functions
-    elif botReply == "searchMOVIE":
+    elif botReply == "searchMOVIE" or botReply == "IDKresponse":
         botReply = search_movie(str(query))
         print(query)
     elif botReply == "randomMOVIE":
