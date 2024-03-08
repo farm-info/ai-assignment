@@ -43,7 +43,6 @@ I need movie suggestions,recommendMOVIE
 Can you recommend a movie for me?,recommendMOVIE
 I'm in the mood for a movie,recommendMOVIE
 MOVIEmenu,MOVIEmenu
-I like it,addMOVIEtolist
 bye,getGOODBYE
 farewell,getGOODBYE
 see ya,getGOODBYE
