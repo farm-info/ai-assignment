@@ -63,7 +63,6 @@ def search_movie(user_query: str) -> str:
     return response
 
 
-# TODO more testing
 def recommend_movie() -> str:
     user_movie_history = [movie[1] for movie in movie_history if movie[0] == "0"]
     if len(user_movie_history) == 0:
@@ -78,9 +77,8 @@ def recommend_movie() -> str:
 
     lists_of_recommendations = []
     for movie in chosen_movies:
-        movie_id = movie[1]
-        lists_of_recommendations.append(get_recommendations_from_movie(int(movie_id), num_recommend=3))
-    recommendations = pd.concat([recommendation_df for recommendation_df in lists_of_recommendations])
+        lists_of_recommendations.append(get_recommendations_from_movie(int(movie), num_recommend=3))
+    recommendations = pd.concat(lists_of_recommendations).drop_duplicates()
     response = "Here are some movies that I think you'll like: <br>"
     response += recommendations.to_html()
     return response
