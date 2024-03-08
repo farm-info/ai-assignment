@@ -21,7 +21,7 @@ def get_recommendations_from_query(user_query, num_recommend: int = 10) -> tuple
     # TODO test which components can be disabled
     for word in USER_QUERY_STOP_WORDS:
         nlp.vocab[word].is_stop = True
-    query_doc = nlp(user_query, disable=[])
+    query_doc = nlp(user_query, disable=["parser", "tagger", "lemmatizer", "senter"])
     query_vector = pd.DataFrame(query_doc.vector.reshape((1, -1)))
 
     search_query = " ".join([token.text for token in query_doc if not token.is_stop])
