@@ -66,10 +66,10 @@ else:
     movies["combined_info"] = movies["title"] + movies["genres"] + movies["tags"]
     # TODO test which components can be disabled
     movie_pipe = nlp.pipe(movies["combined_info"], disable=["parser", "tagger", "lemmatizer", "senter"], n_process=-1)
-    movies = movies.drop(["combined_info"])
     movie_doc = list(movie_pipe)
     movie_vectors = pd.DataFrame([doc.vector for doc in movie_doc])
     similarity = linear_kernel(movie_vectors, movie_vectors)
+    movies = movies.drop(["combined_info"], axis=1)
     joblib.dump(similarity, "data/movie_similarity.joblib")
     joblib.dump(movie_vectors, "data/movie_vectors.joblib")
 
@@ -86,4 +86,4 @@ with open('movie_history.csv', 'r') as f:
 def save_to_movie_history(movie_id: int):
     with open('movie_history.csv', 'a', newline='') as f:
         newFileWriter = csv.writer(f)
-        newFileWriter.writerow([movie_id])
+        newFileWriter.writerow(["0", movie_id])
